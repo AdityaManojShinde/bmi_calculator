@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/Data/chart_data/chart_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -7,21 +8,12 @@ class BMIChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PieChart(
+      swapAnimationDuration: const Duration(milliseconds: 720),
       PieChartData(
-        sectionsSpace: 5,
-        centerSpaceRadius: 50,
-        sections: [
-          PieChartSectionData(
-            title: 'Under Weight',
-            value: 18.5,
-            color: Colors.blueAccent,
-          ),
-          PieChartSectionData(
-            title: 'Healthy',
-            value: 24.9,
-            color: Colors.green,
-          ),
-        ],
+        borderData: FlBorderData(show: false),
+        sectionsSpace: 3,
+        centerSpaceRadius: 80,
+        sections: chartData,
       ),
     );
   }

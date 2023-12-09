@@ -1,4 +1,6 @@
 import 'package:bmi_calculator/Data/consts/name.dart';
+import 'package:bmi_calculator/UI/screens/about_screen.dart';
+import 'package:bmi_calculator/UI/screens/info_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -22,17 +24,26 @@ class AppDrawer extends StatelessWidget {
               const Text(appTitle),
             ],
           )),
-          const ListTile(
-            title: Text('Calculator'),
+          ListTile(
+            title: const Text('Calculator'),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
           ),
-          const ListTile(
-            title: Text('Information about BMI'),
+          ListTile(
+            title: const Text('Information about BMI'),
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (ctx) => const InfoScreen()));
+            },
           ),
-          const ListTile(
-            title: Text('Version'),
-          ),
-          const ListTile(
-            title: Text('Privacy Policy'),
+          ListTile(
+            leading: const Icon(Icons.info_rounded),
+            title: const Text('About'),
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (ctx) => const AboutScreen()));
+            },
           ),
         ],
       ),

@@ -6,6 +6,6 @@ final heightProvider = StateProvider<double>((ref) => 0);
 final bmiProvider = Provider<double>((ref) {
   final weight = ref.watch(weightProvider);
   final height = ref.watch(heightProvider);
-  final bmi = calculateBMI(weight, height);
+  final bmi = calculateBMI(weight: weight, height: height);
   return bmi;
 });

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-double calculateBMI(double weight, double height) {
+double calculateBMI({required double weight, required double height}) {
   if (height == 0) {
     return 0;
   } else {

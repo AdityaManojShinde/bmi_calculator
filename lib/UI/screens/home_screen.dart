@@ -1,5 +1,9 @@
+// ignore_for_file: unused_import
+
 import 'package:bmi_calculator/UI/widgets/app_drawer.dart';
 import 'package:bmi_calculator/UI/widgets/appbar_title.dart';
+import 'package:bmi_calculator/UI/widgets/bmi_indicators.dart';
+import 'package:bmi_calculator/UI/widgets/chart.dart';
 import 'package:bmi_calculator/core/providers/bmi_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -88,14 +92,32 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'BMI : ${bmi.toStringAsFixed(1)}',
-                    style: Theme.of(context).textTheme.titleLarge,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                      padding: const EdgeInsets.all(20),
+                      height: 300,
+                      child: const BMIChart()),
+                  Positioned(
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'BMI : ${bmi.toStringAsFixed(1)}',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(13),
+                child: BmiIndicators(),
               ),
             ],
           ),
