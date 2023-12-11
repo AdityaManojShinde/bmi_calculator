@@ -6,7 +6,7 @@ const double chartRadius = 60;
 const TextStyle chartTitleStyle = TextStyle(
   color: AppColors.colorWhite,
   fontWeight: FontWeight.bold,
-  fontSize: 15,
+  fontSize: 25,
 );
 
 final List<PieChartSectionData> chartData = [
@@ -14,7 +14,7 @@ final List<PieChartSectionData> chartData = [
     titleStyle: chartTitleStyle,
     radius: chartRadius,
     showTitle: true,
-    title: '18.5',
+    title: '😥',
     value: 18.5,
     color: AppColors.chartColorUnderweight,
   ),
@@ -22,7 +22,7 @@ final List<PieChartSectionData> chartData = [
     titleStyle: chartTitleStyle,
     radius: chartRadius,
     showTitle: true,
-    title: '18.5-24.9',
+    title: '😄',
     value: 24.9,
     color: AppColors.chartColorNormalweight,
   ),
@@ -30,7 +30,7 @@ final List<PieChartSectionData> chartData = [
     titleStyle: chartTitleStyle,
     radius: chartRadius,
     showTitle: true,
-    title: '25.0-29.9',
+    title: '😨',
     value: 29.9,
     color: AppColors.chartColorOverweight,
   ),
@@ -38,7 +38,7 @@ final List<PieChartSectionData> chartData = [
     titleStyle: chartTitleStyle,
     radius: chartRadius,
     showTitle: true,
-    title: '30.0 or more',
+    title: '😱',
     value: 30.0,
     color: AppColors.chartColorObesity,
   ),

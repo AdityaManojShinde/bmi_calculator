@@ -5,6 +5,8 @@ import 'package:bmi_calculator/UI/widgets/appbar_title.dart';
 import 'package:bmi_calculator/UI/widgets/bmi_indicators.dart';
 import 'package:bmi_calculator/UI/widgets/chart.dart';
 import 'package:bmi_calculator/core/providers/bmi_provider.dart';
+import 'package:bmi_calculator/core/repo/color_changer.dart';
+import 'package:bmi_calculator/core/repo/give_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,9 +24,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final bmi = ref.watch(bmiProvider);
-    void submitForm() {
+    Color cardColor = changeColor(bmi);
+
+    void submitForm() async {
       if (formKey.currentState!.validate()) {
         formKey.currentState!.save();
+
+        // Update the message before showing the bottom sheet
       }
     }
 
@@ -101,11 +107,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       child: const BMIChart()),
                   Positioned(
                     child: Card(
+                      color: cardColor,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'BMI : ${bmi.toStringAsFixed(1)}',
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                     ),

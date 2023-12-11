@@ -31,15 +31,16 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Information about BMI'),
+            leading: const Icon(Icons.info),
             onTap: () {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (ctx) => const InfoScreen()));
             },
+            title: const Text('BMI Information'),
           ),
           ListTile(
-            leading: const Icon(Icons.info_rounded),
-            title: const Text('About'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
             onTap: () {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (ctx) => const AboutScreen()));

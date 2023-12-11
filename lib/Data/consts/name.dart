@@ -1,1 +1,1 @@
-const String appTitle = 'BMI Calculator';
+const String appTitle = 'BMI Calculator Lite';
